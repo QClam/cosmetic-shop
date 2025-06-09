@@ -5,3 +5,9 @@
 body {
     font-family: "poppins";
 }
+
+.home-bg {
+    background: url("./assets/Showcase/banner.jpg");
+    background-size: cover;
+    height: 50vh;
+}

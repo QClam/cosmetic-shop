@@ -7,14 +7,14 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <>
+    <div className="min-h-screen">
       <Navbar />
       <Routes>
         <Route path="cosmetics-shop/" element={<Home />} />
         <Route path="cosmetics-shop/product" element={<ProductDetails />} />
         <Route path="cosmetics-shop/cart" element={<CartPage />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

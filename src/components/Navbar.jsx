@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 
 import { ShoppingCart, User } from "lucide-react";
 
-import logo from "../assets/Logo.png"
+import logo from "../assets/Logo/Logo.png"
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   //User Toggle
-
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
