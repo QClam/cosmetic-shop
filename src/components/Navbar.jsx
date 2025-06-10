@@ -13,6 +13,9 @@ function Navbar() {
   const dispatch = useDispatch();
   const searchTerm = useSelector((state) => state.search.term);
 
+  const cartItems = useSelector((state) => state.cart.items);
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
   //User Toggle
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -90,12 +93,17 @@ function Navbar() {
               onChange={(e) => dispatch(setSearchTerm(e.target.value))}
             />
           </form>
-          <Link>
-            <ShoppingCart
-              size={54}
-              className="rounded-full bg-gray-100 cursor-pointer px-3 py-2"
-            />
-          </Link>
+          <div className="relative">
+            <Link to={"cosmetics-shop/cart"}>
+              <ShoppingCart
+                size={40}
+                className="rounded-full bg-gray-100 cursor-pointer px-3 py-2"
+              />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-5 bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">{cartCount}</span>
+              )}
+            </Link>
+          </div>
         </nav>
       </div>
     </header>

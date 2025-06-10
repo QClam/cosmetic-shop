@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="cosmetics-shop/" element={<Home />} />
-        <Route path="cosmetics-shop/product" element={<ProductDetails />} />
+        <Route path="cosmetics-shop/product/:id" element={<ProductDetails />} />
         <Route path="cosmetics-shop/cart" element={<CartPage />} />
       </Routes>
     </div>

@@ -13,10 +13,14 @@ function ProductList() {
     error,
   } = useSelector((state) => state.products);
   const { term } = useSelector((state) => state.search);
+  const { selectedCategory } = useSelector((state) => state.search);
 
-  const filteredProducts = products.filter((product) =>
-  product.title.toLowerCase().includes(term.toLowerCase())
-);
+  const filteredProducts = products.filter(
+    (product) =>
+      (product.title.toLowerCase().includes(term.toLowerCase()) ||
+      product.category.toLowerCase().includes(term.toLowerCase())) &&
+      (selectedCategory === 'all' || product.category === selectedCategory)
+  );
 
   // const loadProduct = async () => {
   //     const data = await fetchProduct();
@@ -34,7 +38,7 @@ function ProductList() {
   return (
     <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10 my-24">
       {filteredProducts.map((product) => (
-        <ProductCard key={product} product={product} />
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );

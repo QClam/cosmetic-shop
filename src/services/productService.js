@@ -13,13 +13,13 @@ export const fetchProduct = async () => {
     }
 }
 
-export const searchProduct = async (keyword) => {
+export const fetchProductById = async (id) => {
     try {
-        const response = await axios.get(`${API_URL}/search?q=${keyword}`)
-        const data = response.data
-        return data.products
+        const response = await axios.get(`${API_URL}/${id}`)
+        const data = response.data;
+        return data;
     } catch (error) {
         console.error('Lỗi khi fetch sản phẩm:', error);
-        return []
+        return null;
     }
 }
