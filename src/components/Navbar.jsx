@@ -100,7 +100,7 @@ function Navbar() {
                 className="rounded-full bg-gray-100 cursor-pointer px-3 py-2"
               />
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-5 bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">{cartCount}</span>
+                <span className="absolute -top-2 -right-1 bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">{cartCount}</span>
               )}
             </Link>
           </div>
