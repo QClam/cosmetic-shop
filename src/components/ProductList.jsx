@@ -17,8 +17,7 @@ function ProductList() {
 
   const filteredProducts = products.filter(
     (product) =>
-      (product.title.toLowerCase().includes(term.toLowerCase()) ||
-      product.category.toLowerCase().includes(term.toLowerCase())) &&
+      (product.title.toLowerCase().includes(term.toLowerCase())) &&
       (selectedCategory === 'all' || product.category === selectedCategory)
   );
 
