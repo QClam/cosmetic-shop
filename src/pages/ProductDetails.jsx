@@ -41,7 +41,7 @@ function ProductDetails() {
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Product Not Found</h2>
           <Link
-            to={"/cosmetics-shop/"}
+            to={"/mini-shop/"}
             className="text-blue-500 hover:underline"
           >
             Go Back to Home
@@ -54,7 +54,7 @@ function ProductDetails() {
   return (
     <div className="container mx-auto py-8 px-4 max-w-7xl">
       <div className="flex items-center mb-6">
-        <Link to={"/cosmetics-shop/"}>
+        <Link to={"/mini-shop/"}>
           <ArrowLeft className="hover:animate-pulse hover:scale-110 transition duration-300" />
         </Link>
       </div>

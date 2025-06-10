@@ -10,9 +10,9 @@ function App() {
     <div className="min-h-screen">
       <Navbar />
       <Routes>
-        <Route path="cosmetics-shop/" element={<Home />} />
-        <Route path="cosmetics-shop/product/:id" element={<ProductDetails />} />
-        <Route path="cosmetics-shop/cart" element={<CartPage />} />
+        <Route path="mini-shop/" element={<Home />} />
+        <Route path="mini-shop/product/:id" element={<ProductDetails />} />
+        <Route path="mini-shop/cart" element={<CartPage />} />
       </Routes>
     </div>
   );

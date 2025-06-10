@@ -28,25 +28,25 @@ function Navbar() {
           {/* Menu trái */}
           <div className="flex space-x-6">
             <Link
-              to={"cosmetics-shop/"}
+              to={"mini-shop/"}
               className="text-gray-700 hover:text-blue-600 hover:underline transition"
             >
               Home
             </Link>
             <Link
-              to={"cosmetics-shop/"}
+              to={"mini-shop/"}
               className="text-gray-700 hover:text-blue-600 hover:underline transition"
             >
               About
             </Link>
             <Link
-              to={"cosmetics-shop/"}
+              to={"mini-shop/"}
               className="text-gray-700 hover:text-blue-600 hover:underline transition"
             >
               FAQs
             </Link>
             <Link
-              to={"cosmetics-shop/"}
+              to={"mini-shop/"}
               className="text-gray-700 hover:text-blue-600 hover:underline transition"
             >
               Contact
@@ -62,13 +62,13 @@ function Navbar() {
             }`}
           >
             <Link
-              to={"cosmetics-shop/"}
+              to={"mini-shop/"}
               className="text-gray-700 hover:text-blue-600"
             >
               Sign
             </Link>
             <Link
-              to={"cosmetics-shop/"}
+              to={"mini-shop/"}
               className="text-gray-700 hover:text-blue-600"
             >
               My Account
@@ -94,7 +94,7 @@ function Navbar() {
             />
           </form>
           <div className="relative">
-            <Link to={"cosmetics-shop/cart"}>
+            <Link to={"mini-shop/cart"}>
               <ShoppingCart
                 size={40}
                 className="rounded-full bg-gray-100 cursor-pointer px-3 py-2"

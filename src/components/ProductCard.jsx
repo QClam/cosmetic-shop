@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   return (
-    <Link to={`/cosmetics-shop/product/${product.id}`}>
+    <Link to={`/mini-shop/product/${product.id}`}>
       <div className="shadow-lg rounded-md cursor-pointer">
         <img src={product.thumbnail} alt="Thumbnail" />
         <div className="bg-zinc-50 p-4">
