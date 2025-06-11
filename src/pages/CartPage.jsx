@@ -55,14 +55,18 @@ function CartPage() {
                 <div className="flex items-center gap-2 mt-2">
                   <button
                     className="hover:bg-zinc-100 rounded p-1 transition"
-                    onClick={() =>
-                      dispatch(
-                        updateQuantity({
-                          id: item.id,
-                          quantity: Math.max(0, item.quantity - 1),
-                        })
-                      )
-                    }
+                    onClick={() => {
+                      if (item.quantity > 1) {
+                        dispatch(
+                          updateQuantity({
+                            id: item.id,
+                            quantity: item.quantity - 1,
+                          })
+                        );
+                      } else {
+                        dispatch(removeFromCart(item.id));
+                      }
+                    }}
                   >
                     <Minus size={16} />
                   </button>
@@ -81,7 +85,10 @@ function CartPage() {
                     <Plus size={16} />
                   </button>
                   <div>
-                    <button className="hover:scale-110 transition ml-4" onClick={() => dispatch(removeFromCart(item.id))}>
+                    <button
+                      className="hover:scale-110 transition ml-4"
+                      onClick={() => dispatch(removeFromCart(item.id))}
+                    >
                       <Trash2 size={20} color="red" />
                     </button>
                   </div>
