@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { removeFromCart, updateQuantity } from "../features/products/CartSlice";
+import { clearCart, removeFromCart, updateQuantity } from "../features/products/CartSlice";
 import { Minus, Plus, Trash2 } from "lucide-react";
 
 function CartPage() {
+  const [showConfirm, setShowConfirm] = useState(false);
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const total = cartItems.reduce(
@@ -121,12 +122,39 @@ function CartPage() {
                 </div>
               </div>
             </div>
-            <button className="w-full bg-zinc-200 py-2 rounded font-semibold hover:bg-zinc-300 transition hover:scale-110">
+            <button className="w-full bg-zinc-200 py-2 rounded font-semibold hover:bg-zinc-300 transition hover:scale-110" onClick={() => setShowConfirm(true)}>
               Proceed to Checkout
             </button>
           </div>
         </div>
       </div>
+      {showConfirm && (
+  <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+    <div className="bg-white p-6 rounded shadow-md w-full max-w-sm text-center">
+      <h2 className="text-xl font-semibold mb-4">Confirm Checkout</h2>
+      <p className="mb-6 text-gray-600">Are you sure you want to checkout?</p>
+      <div className="flex justify-center gap-4">
+        <button
+          onClick={() => {
+            dispatch(clearCart());
+            setShowConfirm(false);
+            alert("Checkout successful! Your cart has been cleared. Total amount: $" + total.toFixed(2));
+          }}
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Yes
+        </button>
+        <button
+          onClick={() => setShowConfirm(false)}
+          className="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
